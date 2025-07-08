@@ -1,0 +1,39 @@
+{
+    "name": "godaddy/sdk",
+    "description": "Unofficial PHP SDK for GoDaddy API.",
+    "type": "library",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Sasa Orasanin",
+            "email": "development@zpmlab.com"
+        }
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "GoDaddy\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GoDaddy\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.8"
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
