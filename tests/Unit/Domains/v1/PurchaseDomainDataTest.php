@@ -17,7 +17,12 @@ test('PurchaseDomainData returns correct array structure', function () {
         addressMailing: $addressData,
         email: 'john@example.com',
         nameFirst: 'John',
-        nameLast: 'Doe'
+        nameLast: 'Doe',
+        fax: null,
+        jobTitle: null,
+        nameMiddle: null,
+        organization: null,
+        phone: null
     );
 
     $consentData = new ConsentData(
@@ -27,10 +32,10 @@ test('PurchaseDomainData returns correct array structure', function () {
     );
 
     $purchaseData = new PurchaseDomainData(
+        domain: 'example.com',
         consent: $consentData,
         contactAdmin: $contactData,
         contactRegistrant: $contactData,
-        domain: 'example.com',
         nameServers: ['ns1.example.com', 'ns2.example.com'],
         period: 2,
         privacy: true,
@@ -40,6 +45,10 @@ test('PurchaseDomainData returns correct array structure', function () {
     $result = $purchaseData->toArray();
 
     expect($result)->toBe([
+        'domain' => 'example.com',
+        'period' => 2,
+        'privacy' => true,
+        'renewAuto' => false,
         'consent' => [
             'agreedAt' => '2024-01-01T00:00:00Z',
             'agreedBy' => '192.168.1.1',
@@ -67,17 +76,18 @@ test('PurchaseDomainData returns correct array structure', function () {
             'nameFirst' => 'John',
             'nameLast' => 'Doe'
         ],
-        'domain' => 'example.com',
-        'nameServers' => ['ns1.example.com', 'ns2.example.com'],
-        'period' => 2,
-        'privacy' => true,
-        'renewAuto' => false
+        'nameServers' => ['ns1.example.com', 'ns2.example.com']
     ]);
 });
 
 test('PurchaseDomainData uses default values', function () {
     $purchaseData = new PurchaseDomainData(
-        domain: 'example.com'
+        domain: 'example.com',
+        consent: null,
+        contactAdmin: null,
+        contactBilling: null,
+        contactRegistrant: null,
+        contactTech: null
     );
 
     $result = $purchaseData->toArray();

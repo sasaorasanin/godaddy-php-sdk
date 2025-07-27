@@ -22,7 +22,7 @@ test('ShoppersService can create sub-account', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends ShoppersService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -51,7 +51,7 @@ test('ShoppersService can get shopper', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends ShoppersService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -76,7 +76,7 @@ test('ShoppersService can update shopper', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends ShoppersService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -104,7 +104,7 @@ test('ShoppersService can set password', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends ShoppersService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 

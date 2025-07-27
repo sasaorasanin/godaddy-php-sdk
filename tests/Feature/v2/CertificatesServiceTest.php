@@ -17,7 +17,7 @@ test('CertificatesService can search certificates by entitlement', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends CertificatesService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -36,7 +36,7 @@ test('CertificatesService can download certificate by entitlement', function () 
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends CertificatesService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -55,7 +55,7 @@ test('CertificatesService can get customer certificates', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends CertificatesService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -74,7 +74,7 @@ test('CertificatesService can get customer certificate details', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends CertificatesService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -93,7 +93,7 @@ test('CertificatesService can get domain verifications', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends CertificatesService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -112,7 +112,7 @@ test('CertificatesService can get domain verification details', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends CertificatesService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -128,7 +128,7 @@ test('CertificatesService can get ACME external account binding', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends CertificatesService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 

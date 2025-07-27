@@ -15,10 +15,10 @@ test('ContactData returns correct array structure', function () {
     $contactData = new ContactData(
         addressMailing: $addressData,
         email: 'john@example.com',
-        fax: '+1-555-123-4567',
-        jobTitle: 'Developer',
         nameFirst: 'John',
         nameLast: 'Doe',
+        fax: '+1-555-123-4567',
+        jobTitle: 'Developer',
         nameMiddle: 'M',
         organization: 'Example Corp',
         phone: '+1-555-987-6543'
@@ -35,10 +35,10 @@ test('ContactData returns correct array structure', function () {
             'state' => 'NY'
         ],
         'email' => 'john@example.com',
-        'fax' => '+1-555-123-4567',
-        'jobTitle' => 'Developer',
         'nameFirst' => 'John',
         'nameLast' => 'Doe',
+        'fax' => '+1-555-123-4567',
+        'jobTitle' => 'Developer',
         'nameMiddle' => 'M',
         'organization' => 'Example Corp',
         'phone' => '+1-555-987-6543'
@@ -57,7 +57,12 @@ test('ContactData filters null values', function () {
         addressMailing: $addressData,
         email: 'john@example.com',
         nameFirst: 'John',
-        nameLast: 'Doe'
+        nameLast: 'Doe',
+        fax: null,
+        jobTitle: null,
+        nameMiddle: null,
+        organization: null,
+        phone: null
     );
 
     $result = $contactData->toArray();

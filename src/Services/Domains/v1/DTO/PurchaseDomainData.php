@@ -5,12 +5,12 @@ namespace GoDaddy\Services\Domains\v1\DTO;
 class PurchaseDomainData
 {
     public function __construct(
+        public string $domain,
         public ?ConsentData $consent = null,
         public ?ContactData $contactAdmin = null,
         public ?ContactData $contactBilling = null,
         public ?ContactData $contactRegistrant = null,
         public ?ContactData $contactTech = null,
-        public string $domain,
         public ?array $nameServers = null,
         public int $period = 1,
         public bool $privacy = false,

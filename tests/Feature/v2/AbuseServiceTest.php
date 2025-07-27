@@ -16,7 +16,7 @@ test('AbuseService can create an abuse ticket', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends AbuseService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -45,7 +45,7 @@ test('AbuseService can list abuse tickets', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends AbuseService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -65,7 +65,7 @@ test('AbuseService can get a specific abuse ticket', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends AbuseService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 

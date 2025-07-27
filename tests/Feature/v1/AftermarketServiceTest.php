@@ -21,7 +21,7 @@ test('AftermarketService can get auction listings', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends AftermarketService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(\GuzzleHttp\Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -41,7 +41,7 @@ test('AftermarketService can delete auction listings', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends AftermarketService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(\GuzzleHttp\Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -58,7 +58,7 @@ test('AftermarketService can create expiry listings', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends AftermarketService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(\GuzzleHttp\Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 

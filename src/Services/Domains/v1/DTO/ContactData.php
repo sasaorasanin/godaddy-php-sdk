@@ -7,10 +7,10 @@ class ContactData
     public function __construct(
         public ContactAddressData $addressMailing,
         public string $email,
-        public ?string $fax = null,
-        public ?string $jobTitle = null,
         public string $nameFirst,
         public string $nameLast,
+        public ?string $fax = null,
+        public ?string $jobTitle = null,
         public ?string $nameMiddle = null,
         public ?string $organization = null,
         public ?string $phone = null,
@@ -46,5 +46,20 @@ class ContactData
         }
         
         return $data;
+    }
+
+    public static function fromArray(array $data): self
+    {
+        return new self(
+            addressMailing: ContactAddressData::fromArray($data['addressMailing']),
+            email: $data['email'],
+            nameFirst: $data['nameFirst'],
+            nameLast: $data['nameLast'],
+            fax: $data['fax'] ?? null,
+            jobTitle: $data['jobTitle'] ?? null,
+            nameMiddle: $data['nameMiddle'] ?? null,
+            organization: $data['organization'] ?? null,
+            phone: $data['phone'] ?? null,
+        );
     }
 } 

@@ -19,7 +19,7 @@ test('OrdersService can get all orders', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends OrdersService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 
@@ -49,7 +49,7 @@ test('OrdersService can get specific order by ID', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends OrdersService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 

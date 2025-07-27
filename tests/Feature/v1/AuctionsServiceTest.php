@@ -19,7 +19,7 @@ test('AuctionsService can place multiple bids', function () {
     $client = new Client(['handler' => $handlerStack, 'base_uri' => 'https://api.example.com']);
 
     $service = new class('key', 'secret', 'https://api.example.com') extends AuctionsService {
-        public function setClient($client) { $this->client = $client; }
+        public function setClient(Client $client): void { $this->client = $client; }
     };
     $service->setClient($client);
 

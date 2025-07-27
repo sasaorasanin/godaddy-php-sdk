@@ -6,10 +6,10 @@ class ContactAddressData
 {
     public function __construct(
         public string $address1,
-        public ?string $address2 = null,
         public string $city,
         public string $country,
         public string $postalCode,
+        public ?string $address2 = null,
         public ?string $state = null,
     ) {}
 
@@ -31,5 +31,17 @@ class ContactAddressData
         }
         
         return $data;
+    }
+
+    public static function fromArray(array $data): self
+    {
+        return new self(
+            address1: $data['address1'],
+            city: $data['city'],
+            country: $data['country'],
+            postalCode: $data['postalCode'],
+            address2: $data['address2'] ?? null,
+            state: $data['state'] ?? null,
+        );
     }
 } 

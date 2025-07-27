@@ -16,7 +16,12 @@ test('ValidateContactsData returns correct array structure', function () {
         addressMailing: $addressData,
         email: 'john@example.com',
         nameFirst: 'John',
-        nameLast: 'Doe'
+        nameLast: 'Doe',
+        fax: null,
+        jobTitle: null,
+        nameMiddle: null,
+        organization: null,
+        phone: null
     );
 
     $validateData = new ValidateContactsData(

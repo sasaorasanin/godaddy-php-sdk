@@ -67,4 +67,9 @@ abstract class BaseService
             throw new \RuntimeException('Failed to decode JSON response: ' . $e->getMessage());
         }
     }
+
+    public function setClient(Client $client): void
+    {
+        $this->client = $client;
+    }
 } 

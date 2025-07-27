@@ -6,4 +6,6 @@ enum CheckType: string
 {
     case FAST = 'FAST';
     case FULL = 'FULL';
+    case FAST_LOWERCASE = 'fast';
+    case FULL_LOWERCASE = 'full';
 } 
